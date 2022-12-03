@@ -1,11 +1,15 @@
 package com.enola.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import com.enola.QtcStart;
+
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -109,7 +113,14 @@ public class CalculatorController implements Initializable {
 
 	@FXML
     void btn_reset(MouseEvent event) {
+		txt_HR.setText(null);
+		txt_QTinterval.setText(null);
+		txt_result.setText(null);
+    }
 
+    @FXML
+    void btn_back(ActionEvent event) throws IOException {
+    	QtcStart.changeScene("view/QtcStart.fxml", "QTc Calculator");	
     }
 
 	@Override
